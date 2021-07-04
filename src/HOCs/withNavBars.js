@@ -8,7 +8,7 @@
 
 import React from "react";
 import { makeStyles } from "@material-ui/core";
-import { TopNavBar, SideNavBar } from "../components";
+import { SideNavBar } from "../components";
 
 const useStyles = makeStyles((theme) => ({
   root: {

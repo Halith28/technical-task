@@ -1,6 +1,6 @@
 import React from "react";
 import CheckboxTree from "react-checkbox-tree";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const nodes = [
   {

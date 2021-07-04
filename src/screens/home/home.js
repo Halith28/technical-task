@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Grid,
   makeStyles,
@@ -12,8 +12,6 @@ import {
   Link,
   Breadcrumbs,
   Avatar,
-  InputBase,
-  fade,
   InputAdornment,
 } from "@material-ui/core";
 import Autocomplete from "@material-ui/lab/Autocomplete";
@@ -25,6 +23,7 @@ import logo from "../../assets/Group 1909.png";
 import { Notifications, HomeOutlined, Search } from "@material-ui/icons";
 import { Button } from "@material-ui/core";
 import profileicon from "../../assets/profileicon.png";
+import ModalComp from "../../components/modalComp";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -63,43 +62,7 @@ const useStyles = makeStyles((theme) => ({
   topBar: {
     marginBottom: "20px",
   },
-  search: {
-    position: "relative",
-    borderRadius: theme.shape.borderRadius,
-    backgroundColor: fade(theme.palette.common.white, 0.15),
-    "&:hover": {
-      backgroundColor: fade(theme.palette.common.white, 0.25),
-    },
-    marginRight: theme.spacing(2),
-    marginLeft: 0,
-    width: "100%",
-    [theme.breakpoints.up("sm")]: {
-      marginLeft: theme.spacing(3),
-      width: "auto",
-    },
-  },
-  searchIcon: {
-    padding: theme.spacing(0, 2),
-    height: "100%",
-    position: "absolute",
-    pointerEvents: "none",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  inputRoot: {
-    color: "inherit",
-  },
-  inputInput: {
-    padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
-    paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
-    transition: theme.transitions.create("width"),
-    width: "100%",
-    [theme.breakpoints.up("md")]: {
-      width: "20ch",
-    },
-  },
+
   hierarchy: {
     height: 300,
     overflow: "auto",
@@ -324,6 +287,7 @@ const HomeComp = () => {
   const [value, setValue] = React.useState("female");
   const [checked, setChecked] = React.useState([]);
   const [expanded, setExpanded] = React.useState([]);
+  const [addModal, setAddModal] = useState(false);
 
   const handleChange = (event) => {
     setValue(event.target.value);
@@ -333,6 +297,14 @@ const HomeComp = () => {
     event.preventDefault();
     console.info("You clicked a breadcrumb.");
   }
+
+  const addModalOpen = () => {
+    setAddModal(true);
+  };
+
+  const addModalClose = () => {
+    setAddModal(false);
+  };
   return (
     <Grid container className={classes.root}>
       <Grid item xs={12} className={classes.topBar}>
@@ -474,11 +446,21 @@ const HomeComp = () => {
               <Button variant="outlined" style={{ marginRight: 10 }}>
                 Clear All
               </Button>
-              <Button variant="outlined">Assign Profile</Button>
+              <Button variant="outlined" onClick={() => addModalOpen()}>
+                Assign Profile
+              </Button>
             </div>
           </div>
         </Card>
       </Grid>
+      {addModal && (
+        <ModalComp
+          open={addModal}
+          handleClose={addModalClose}
+          header={"Add Product Inventory"}
+          isTitle
+        />
+      )}
     </Grid>
   );
 };

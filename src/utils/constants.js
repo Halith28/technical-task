@@ -8,7 +8,6 @@
 import React from "react";
 import { Routes } from "../router/routes";
 // import ListAltIcon from '@material-ui/icons/ListAlt';
-import ViewStreamIcon from "@material-ui/icons/ViewStream";
 import DashboardIcon from "@material-ui/icons/Dashboard";
 import SettingsIcon from "@material-ui/icons/Settings";
 
