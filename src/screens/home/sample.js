@@ -5,85 +5,49 @@ import CheckboxTree from "react-checkbox-tree";
 const nodes = [
   {
     value: "/app",
-    label: "app",
+    label: "Client ID: Best Buy Inc",
     children: [
       {
         value: "/app/Http",
-        label: "Http",
+        label: "Agent: PLAT C (736970115886)",
         children: [
           {
             value: "/app/Http/Controllers",
-            label: "Controllers",
+            label: "Corp: Best Buy ApplePay/Partsearch (345961663886)",
             children: [
               {
-                value: "/app/Http/Controllers/WelcomeController.js",
-                label: "WelcomeController.js",
+                value: "/app/Http/Controllers/Bestbuy.com (372395416889)",
+                label: "Chain: Bestbuy.com (372395416889)",
+                children: [
+                  {
+                    value:
+                      "/app/Http/Controllers/Bestbuy.com (372395416889)/Account: 2 accounts",
+                    label: "Account: 2 accounts",
+                  },
+                ],
+              },
+              {
+                value:
+                  "/app/Http/Controllers/Partsearch Technologies (345951453884)",
+                label: "Chain: Partsearch Technologies (345951453884)",
+                children: [
+                  {
+                    value:
+                      "/app/Http/Controllers/Partsearch Technologies (345951453884)/Account: 2 accounts",
+                    label: "Account: 2 accounts",
+                  },
+                ],
+              },
+              {
+                value:
+                  "/app/Http/Controllers/Magnolia Hi Fi Inc. (345770051885)",
+                label: "Chain: Magnolia Hi Fi Inc. (345770051885)",
               },
             ],
           },
-          {
-            value: "/app/Http/routes.js",
-            label: "routes.js",
-          },
-        ],
-      },
-      {
-        value: "/app/Providers",
-        label: "Providers",
-        children: [
-          {
-            value: "/app/Providers/EventServiceProvider.js",
-            label: "EventServiceProvider.js",
-          },
         ],
       },
     ],
-  },
-  {
-    value: "/config",
-    label: "config",
-    children: [
-      {
-        value: "/config/app.js",
-        label: "app.js",
-      },
-      {
-        value: "/config/database.js",
-        label: "database.js",
-      },
-    ],
-  },
-  {
-    value: "/public",
-    label: "public",
-    children: [
-      {
-        value: "/public/assets/",
-        label: "assets",
-        children: [
-          {
-            value: "/public/assets/style.css",
-            label: "style.css",
-          },
-        ],
-      },
-      {
-        value: "/public/index.html",
-        label: "index.html",
-      },
-    ],
-  },
-  {
-    value: "/.env",
-    label: ".env",
-  },
-  {
-    value: "/.gitignore",
-    label: ".gitignore",
-  },
-  {
-    value: "/README.md",
-    label: "README.md",
   },
 ];
 
